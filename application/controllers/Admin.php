@@ -7,4 +7,20 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin_dashboard');
 	}
+	public function ticket()
+	{
+		$this->load->view('admin_ticket');
+	}
+	public function dokter()
+	{
+		$this->load->view('admin_dokter');
+	}
+	public function pelanggan()
+	{
+		$this->load->view('admin_pelanggan');
+	}
+	public function logout()
+	{
+		// $this->load->view('admin_dashboard');
+	}
 }

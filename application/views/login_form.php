@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div class="login-container">
-  <img src="https://via.placeholder.com/150" alt="Avatar">
+  <img src="<?=base_url().'/img/logo.jpg'?>" alt="Avatar">
   <h2>Login</h2>
   <form action="#" method="post">
     <input type="text" name="username" placeholder="Username" required>

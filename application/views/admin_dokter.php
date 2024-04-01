@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Ticket Antre</title>
+<title>Admin Dokter</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,41 +30,38 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Data Ticket Antre</h2></td>
+      <td class="title"><h2>Data Dokter</h2></td>
       <td class="button-container" style="text-align: right;">
-        <a href="<?=site_url('admin/ticket_add')?>"><button type="button" class="btn btn-primary">Tambah Antre Baru</button></a>
+        <button type="button" class="btn btn-primary">Tambah Dokter Baru</button>
       </td>
     </tr>
   </table>
 	  <table id="productTable">
 		<thead>
 		  <tr>
-			<th>ID Antre</th>
-			<th>Name Pelanggan</th>
-			<th>Tanggal Mendaftar</th>
-			<th>Jam Masuk</th>
-			<th>Poli Tujuan</th>
+			<th>ID Dokter</th>
 			<th>Nama Dokter</th>
+			<th>Tanggal Lahir</th>
+			<th>Spesialis</th>
+			<th>No Telpon</th>
 			<th>Action</th>
 		  </tr>
 		</thead>
 		<tbody>
 		  <tr>
 			<td>1</td>
-			<td>Mr A</td>
-			<td>01-01-1999</td>
-			<td>09:00</td>
-			<td>Mata</td>
 			<td>Dr. A</td>
+			<td>10-10-1999</td>
+			<td>Mata</td>
+			<td>XXXXXXXXXXXXX</td>
 			<td>Edit | Delete</td>
 		  </tr>
 		  <tr>
-			<td>2</td>
-			<td>Mr B</td>
-			<td>01-02-1999</td>
-			<td>09:10</td>
-			<td>Gigi</td>
+		  	<td>1</td>
 			<td>Dr. B</td>
+			<td>10-11-1999</td>
+			<td>Gigi</td>
+			<td>XXXXXXXXXXXXX</td>
 			<td>Edit | Delete</td>
 		  </tr>
 		  <!-- Add more rows as needed -->

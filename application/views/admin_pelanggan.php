@@ -50,27 +50,21 @@ table {
 		  </tr>
 		</thead>
 		<tbody>
+		<?php foreach($array_pelanggan as $pelanggan): ?>
 		  <tr>
-			<td>1</td>
-			<td>Mr. A</td>
-			<td>Bekasi</td>
-			<td>10-10-2010</td>
-			<td>14 Tahun</td>
-			<td>Jl. XXXXXXXXXXX</td>
-			<td>08XXXXXXXXXXXXX</td>
-			<td>Edit | Delete</td>
+			<td><?=$pelanggan->id_pelanggan?></td>
+			<td><?=$pelanggan->nama_pelanggan?></td>
+			<td><?=$pelanggan->tempat_lahir?></td>
+			<td><?=$pelanggan->tanggal_lahir?></td>
+			<td><?=((int)date("Y") - (int)$pelanggan->tanggal_lahir). " Tahun"?></td>
+			<td><?=$pelanggan->alamat?></td>
+			<td><?=$pelanggan->no_telp?></td>
+			<td>
+				<a href="<?=site_url('/admin/pelanggan_edit/'.$pelanggan->id_pelanggan)?>">Ubah</a> | 
+				<a href="<?=site_url('/admin/pelanggan_hapus/'.$pelanggan->id_pelanggan)?>">Hapus</a>
+			</td>
 		  </tr>
-		  <tr>
-			<td>1</td>
-			<td>Mr. B</td>
-			<td>Bekasi</td>
-			<td>10-11-2010</td>
-			<td>14 Tahun</td>
-			<td>Jl. XXXXXXXXXXX</td>
-			<td>08XXXXXXXXXXXXX</td>
-			<td>Edit | Delete</td>		  
-		</tr>
-		  <!-- Add more rows as needed -->
+		<?php endforeach; ?>
 		</tbody>
 	  </table>
 	</div>

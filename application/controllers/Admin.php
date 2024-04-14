@@ -23,6 +23,14 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin_pelanggan');
 	}
+	public function pelanggan_add()
+	{
+		$this->load->view('admin_pelanggan_add');
+	}
+	public function pelanggan_add_go()
+	{
+		
+	}
 	public function logout()
 	{
 		// $this->load->view('admin_dashboard');

@@ -32,7 +32,7 @@ table {
     <tr>
       <td class="title"><h2>Data Pelanggan</h2></td>
       <td class="button-container" style="text-align: right;">
-        <button type="button" class="btn btn-primary">Tambah Pelanggan Baru</button>
+        <a href="<?=site_url('admin/pelanggan_add')?>"><button type="button" class="btn btn-primary">Tambah Pelanggan Baru</button></a>
       </td>
     </tr>
   </table>

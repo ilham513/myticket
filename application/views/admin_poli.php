@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dokter</title>
+<title>Admin Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,34 +30,28 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Data Dokter</h2></td>
+      <td class="title"><h2>Data poli</h2></td>
       <td class="button-container" style="text-align: right;">
-        <a href="<?=site_url('admin/dokter_add')?>"><button type="button" class="btn btn-primary">Tambah Dokter Baru</button></a>
+        <a href="<?=site_url('admin/poli_add')?>"><button type="button" class="btn btn-primary">Tambah Poli Baru</button></a>
       </td>
     </tr>
   </table>
 	  <table id="productTable">
 		<thead>
 		  <tr>
-			<th>ID Dokter</th>
-			<th>Nama Dokter</th>
-			<th>Tempat Tanggal Lahir</th>
-			<th>Poli</th>
-			<th>No Telpon</th>
+			<th>ID Poli</th>
+			<th>Nama Poli</th>
 			<th>Action</th>
 		  </tr>
 		</thead>
 		<tbody>
-		<?php foreach($array_dokter as $dokter): ?>
+		<?php foreach($array_poli as $poli): ?>
 		  <tr>
-			<td><?=$dokter->id_dokter?></td>
-			<td><?=$dokter->nama_dokter?></td>
-			<td><?=$dokter->tempat_lahir.", ".$dokter->tanggal_lahir?></td>
-			<td><?=$dokter->nama_poli?></td>
-			<td><?=$dokter->no_telp?></td>
+			<td><?=$poli->id_poli?></td>
+			<td><?=$poli->nama_poli?></td>
 			<td>
-				<a href="<?=site_url('/admin/dokter_edit/'.$dokter->id_dokter)?>">Ubah</a> | 
-				<a href="<?=site_url('/admin/dokter_hapus/'.$dokter->id_dokter)?>">Hapus</a>
+				<a href="<?=site_url('/admin/poli_edit/'.$poli->id_poli)?>">Ubah</a> | 
+				<a href="<?=site_url('/admin/poli_hapus/'.$poli->id_poli)?>">Hapus</a>
 			</td>
 		  </tr><?php endforeach; ?><!-- Add more rows as needed -->
 		</tbody>

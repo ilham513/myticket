@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dokter</title>
+<title>Admin Poli Add</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,38 +30,16 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Data Dokter</h2></td>
-      <td class="button-container" style="text-align: right;">
-        <a href="<?=site_url('admin/dokter_add')?>"><button type="button" class="btn btn-primary">Tambah Dokter Baru</button></a>
-      </td>
+      <td class="title"><h2>Buat Poli Baru</h2></td>
     </tr>
   </table>
-	  <table id="productTable">
-		<thead>
-		  <tr>
-			<th>ID Dokter</th>
-			<th>Nama Dokter</th>
-			<th>Tempat Tanggal Lahir</th>
-			<th>Poli</th>
-			<th>No Telpon</th>
-			<th>Action</th>
-		  </tr>
-		</thead>
-		<tbody>
-		<?php foreach($array_dokter as $dokter): ?>
-		  <tr>
-			<td><?=$dokter->id_dokter?></td>
-			<td><?=$dokter->nama_dokter?></td>
-			<td><?=$dokter->tempat_lahir.", ".$dokter->tanggal_lahir?></td>
-			<td><?=$dokter->nama_poli?></td>
-			<td><?=$dokter->no_telp?></td>
-			<td>
-				<a href="<?=site_url('/admin/dokter_edit/'.$dokter->id_dokter)?>">Ubah</a> | 
-				<a href="<?=site_url('/admin/dokter_hapus/'.$dokter->id_dokter)?>">Hapus</a>
-			</td>
-		  </tr><?php endforeach; ?><!-- Add more rows as needed -->
-		</tbody>
-	  </table>
+      <form action="<?=site_url('/admin/poli_add_go')?>" method="post">
+        <div class="form-group">
+          <label for="nama">Nama Poli:</label>
+          <input type="text" class="form-control" name="nama_poli" placeholder="Masukkan nama">
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Kirim</button>
+      </form>
 	</div>
 </div>
 

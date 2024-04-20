@@ -105,15 +105,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
       <div class="col-lg-3">
-        <!--div class="panel panel-success">
+        <div class="panel panel-success">
           <div class="panel-heading">
             <div class="row">
               <div class="col-xs-6">
-                <i class="fa fa-comments fa-5x"></i>
+                <i class="fa fa-plus fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
                 <p class="announcement-heading">9000</p>
-                <p class="announcement-text"> Orders!</p>
+                <p class="announcement-text"> Poli</p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
             </div>
           </a>
-        </div-->
+        </div>
       </div>
     </div><!-- /.row -->
 	</div>

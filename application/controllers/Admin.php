@@ -24,7 +24,118 @@ class Admin extends CI_Controller {
 	}
 	public function dokter()
 	{
-		$this->load->view('admin_dokter');
+		$data['array_dokter'] = $this->crud_model->mengambil_data_join('dokter',['poli']);
+
+		$this->load->view('admin_dokter',$data);
+	}
+	public function dokter_edit($id)
+	{
+		//load model crud
+		$data['array_dokter'] = $this->crud_model->mengambil_data_id('dokter','id_dokter',$id);
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+		$data['obj_dokter'] = $data['array_dokter'][0];
+
+		$this->load->view('admin_dokter_edit',$data);
+	}
+	public function dokter_edit_go()
+	{
+		//variabel data edit
+		$data = array(
+			'nama_dokter' => $this->input->post('nama_dokter'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'id_poli' => $this->input->post('id_poli'),
+			'no_telp' => $this->input->post('no_telp')		
+		);
+
+		//load model mengubah data
+		$this->crud_model->mengubah_data_id('dokter', $data,'id_dokter',$this->input->post('id_dokter'));
+
+		//redirect
+		redirect('/admin/dokter', 'refresh');
+	}
+	public function dokter_hapus($id)
+	{
+		//load model hapus data
+		$this->crud_model->menghapus_data_id('dokter','id_dokter',$id);
+
+		//redirect
+		redirect('/admin/dokter', 'refresh');
+	}	
+	public function dokter_add()
+	{
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+
+		$this->load->view('admin_dokter_add',$data);
+	}
+	public function dokter_add_go()
+	{
+		//variabel data
+		$data = array(
+			'nama_dokter' => $this->input->post('nama_dokter'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+			'id_poli' => $this->input->post('id_poli'),
+			'no_telp' => $this->input->post('no_telp')		
+		);
+		
+		//tampilkan view
+		$this->crud_model->masukan_data('dokter', $data);
+		
+		//redirect
+		redirect('/admin/dokter', 'refresh');
+	}
+	public function poli()
+	{
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+
+		$this->load->view('admin_poli',$data);
+	}
+	public function poli_edit($id)
+	{
+		//load model crud
+		$data['array_poli'] = $this->crud_model->mengambil_data_id('poli','id_poli',$id);
+		$data['obj_poli'] = $data['array_poli'][0];
+
+		$this->load->view('admin_poli_edit',$data);
+	}
+	public function poli_edit_go()
+	{
+		//variabel data edit
+		$data = array(
+			'nama_poli' => $this->input->post('nama_poli')	
+		);
+
+		//load model mengubah data
+		$this->crud_model->mengubah_data_id('poli', $data,'id_poli',$this->input->post('id_poli'));
+
+		//redirect
+		redirect('/admin/poli', 'refresh');
+	}
+	public function poli_hapus($id)
+	{
+		//load model hapus data
+		$this->crud_model->menghapus_data_id('poli','id_poli',$id);
+
+		//redirect
+		redirect('/admin/poli', 'refresh');
+	}	
+	public function poli_add()
+	{
+		$this->load->view('admin_poli_add');
+	}
+	public function poli_add_go()
+	{
+		//variabel data
+		$data = array(
+			'nama_poli' => $this->input->post('nama_poli')	
+		);
+		
+		//tampilkan view
+		$this->crud_model->masukan_data('poli', $data);
+		
+		//redirect
+		redirect('/admin/poli', 'refresh');
 	}
 	public function pelanggan()
 	{

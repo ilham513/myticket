@@ -57,8 +57,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="login-container">
   <img src="<?=base_url().'/img/logo.jpg'?>" alt="Avatar">
   <h2>Login</h2>
-  <form action="#" method="post">
-    <input type="text" name="username" placeholder="Username" required>
+  <form action="<?=site_url('login/login_go')?>" method="post">
+    <input type="text" name="id" placeholder="ID" required>
     <br>
     <input type="password" name="password" placeholder="Password" required>
     <br>

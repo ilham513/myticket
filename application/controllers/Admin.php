@@ -12,16 +12,78 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin_dashboard');
+		$data['jumlah_ticket'] = $this->crud_model->menghitung_jumlah_row('ticket');
+		$data['jumlah_dokter'] = $this->crud_model->menghitung_jumlah_row('dokter');
+		$data['jumlah_pelanggan'] = $this->crud_model->menghitung_jumlah_row('pelanggan');
+		$data['jumlah_poli'] = $this->crud_model->menghitung_jumlah_row('poli');
+
+		$this->load->view('admin_dashboard', $data);
 	}
 	public function ticket()
 	{
-		$this->load->view('admin_ticket');
+		$data['array_ticket'] = $this->crud_model->mengambil_data_join('ticket',['poli','dokter','pelanggan']);
+
+		$this->load->view('admin_ticket',$data);
 	}
 	public function ticket_add()
 	{
-		$this->load->view('admin_ticket_add');
+		$data['array_pelanggan'] = $this->crud_model->mengambil_data('pelanggan');
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+		$data['array_dokter'] = $this->crud_model->mengambil_data('dokter');
+
+		$this->load->view('admin_ticket_add',$data);
 	}
+	public function ticket_add_go()
+	{
+		//variabel data
+		$data = array(
+			'id_pelanggan' => $this->input->post('id_pelanggan'),
+			'id_dokter' => $this->input->post('id_dokter'),
+			'id_poli' => $this->input->post('id_poli')	
+		);
+		
+		//tampilkan view
+		$this->crud_model->masukan_data('ticket', $data);
+		
+		//redirect
+		redirect('/admin/ticket', 'refresh');
+	}
+	public function ticket_edit($id)
+	{
+		//load model crud
+		$data['array_ticket'] = $this->crud_model->mengambil_data_join_id('ticket',['poli','dokter','pelanggan'],'id_ticket',$id);
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+		$data['array_dokter'] = $this->crud_model->mengambil_data('dokter');
+		$data['array_pelanggan'] = $this->crud_model->mengambil_data('pelanggan');
+		$data['obj_ticket'] = $data['array_ticket'][0];
+		#var_dump($data);die();
+
+		$this->load->view('admin_ticket_edit',$data);
+	}
+	public function ticket_edit_go()
+	{
+		//variabel data edit
+		$data = array(
+			'id_pelanggan' => $this->input->post('id_pelanggan'),
+			'id_poli' => $this->input->post('id_poli'),
+			'id_dokter' => $this->input->post('id_dokter')
+		);
+
+		//load model mengubah data
+		$this->crud_model->mengubah_data_id('ticket', $data,'id_ticket',$this->input->post('id_ticket'));
+
+		//redirect
+		redirect('/admin/ticket', 'refresh');
+	}
+	public function ticket_hapus($id)
+	{
+		//load model hapus data
+		$this->crud_model->menghapus_data_id('ticket','id_ticket',$id);
+
+		//redirect
+		redirect('/admin/ticket', 'refresh');
+	}	
+
 	public function dokter()
 	{
 		$data['array_dokter'] = $this->crud_model->mengambil_data_join('dokter',['poli']);
@@ -156,6 +218,7 @@ class Admin extends CI_Controller {
 		//variabel data edit
 		$data = array(
 			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+			'nik' => $this->input->post('nik'),
 			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'tempat_lahir' => $this->input->post('tempat_lahir'),
 			'alamat' => $this->input->post('alamat'),
@@ -185,6 +248,7 @@ class Admin extends CI_Controller {
 		//variabel data
 		$data = array(
 			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+			'nik' => $this->input->post('nik'),
 			'tempat_lahir' => $this->input->post('tempat_lahir'),
 			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
 			'alamat' => $this->input->post('alamat'),
@@ -199,6 +263,7 @@ class Admin extends CI_Controller {
 	}
 	public function logout()
 	{
-		// $this->load->view('admin_dashboard');
+		//redirect
+		redirect('', 'refresh');
 	}
 }

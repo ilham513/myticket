@@ -39,6 +39,10 @@ table {
           <input name="nama_pelanggan" type="text" class="form-control" id="nama" placeholder="Masukkan nama....">
         </div>
         <div class="form-group">
+          <label for="nama">NIK:</label>
+          <input name="nik" type="number" class="form-control" id="nama" placeholder="Masukkan nomor NIK....">
+        </div>
+        <div class="form-group">
           <label for="nama">Tempat Lahir:</label>
           <input name="tempat_lahir" type="text" class="form-control" id="nama" placeholder="Masukkan Tempat Lahir....">
         </div>

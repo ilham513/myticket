@@ -41,6 +41,7 @@ table {
 		  <tr>
 			<th>ID Pelanggan</th>
 			<th>Nama Lengkap</th>
+			<th>NIK</th>
 			<th>Tempat Lahir</th>
 			<th>Tanggal Lahir</th>
 			<th>Usia</th>
@@ -54,6 +55,7 @@ table {
 		  <tr>
 			<td><?=$pelanggan->id_pelanggan?></td>
 			<td><?=$pelanggan->nama_pelanggan?></td>
+			<td><?=$pelanggan->nik?></td>
 			<td><?=$pelanggan->tempat_lahir?></td>
 			<td><?=$pelanggan->tanggal_lahir?></td>
 			<td><?=((int)date("Y") - (int)$pelanggan->tanggal_lahir). " Tahun"?></td>

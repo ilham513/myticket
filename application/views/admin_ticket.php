@@ -49,25 +49,19 @@ table {
 		  </tr>
 		</thead>
 		<tbody>
+		<?php foreach($array_ticket as $ticket): ?>
 		  <tr>
-			<td>1</td>
-			<td>Mr A</td>
-			<td>01-01-1999</td>
-			<td>09:00</td>
-			<td>Mata</td>
-			<td>Dr. A</td>
-			<td>Edit | Delete</td>
-		  </tr>
-		  <tr>
-			<td>2</td>
-			<td>Mr B</td>
-			<td>01-02-1999</td>
-			<td>09:10</td>
-			<td>Gigi</td>
-			<td>Dr. B</td>
-			<td>Edit | Delete</td>
-		  </tr>
-		  <!-- Add more rows as needed -->
+			<td><?=$ticket->id_ticket?></td>
+			<td><?=$ticket->nama_pelanggan?></td>
+			<td><?=date("d-m-Y", strtotime($ticket->stamp_waktu))?></td>
+			<td><?=date("H:i", strtotime($ticket->stamp_waktu))?></td>
+			<td><?=$ticket->nama_poli?></td>
+			<td><?=$ticket->nama_dokter?></td>
+			<td>
+				<a href="<?=site_url('/admin/ticket_edit/'.$ticket->id_ticket)?>">Ubah</a> | 
+				<a href="<?=site_url('/admin/ticket_hapus/'.$ticket->id_ticket)?>">Hapus</a>
+			</td>
+		  </tr><?php endforeach; ?><!-- Add more rows as needed -->
 		</tbody>
 	  </table>
 	</div>

@@ -10,9 +10,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<?=base_url()?>/css/style.css">
+<link rel="stylesheet" href="<?=base_url()?>css/style.css">
 </head>
 <body>
 
@@ -31,12 +30,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <i class="fa fa-ticket fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">90</p>
+                <p class="announcement-heading"><?=$jumlah_ticket?></p>
                 <p class="announcement-text">Ticket</p>
               </div>
             </div>
           </div>
-          <a href="#">
+          <a href="<?=site_url('admin/ticket')?>">
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
@@ -58,12 +57,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <i class="fa fa-user-md fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">12</p>
+                <p class="announcement-heading"><?=$jumlah_dokter?></p>
                 <p class="announcement-text"> Dokter</p>
               </div>
             </div>
           </div>
-          <a href="#">
+          <a href="<?=site_url('admin/dokter')?>">
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
@@ -85,12 +84,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <i class="fa fa-users fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">180</p>
+                <p class="announcement-heading"><?=$jumlah_pelanggan?></p>
                 <p class="announcement-text">Pelanggan</p>
               </div>
             </div>
           </div>
-          <a href="#">
+          <a href="<?=site_url('admin/pelanggan')?>">
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
@@ -112,12 +111,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <i class="fa fa-plus fa-5x"></i>
               </div>
               <div class="col-xs-6 text-right">
-                <p class="announcement-heading">9000</p>
+                <p class="announcement-heading"><?=$jumlah_poli?></p>
                 <p class="announcement-text"> Poli</p>
               </div>
             </div>
           </div>
-          <a href="#">
+          <a href="<?=site_url('admin/poli')?>">
             <div class="panel-footer announcement-bottom">
               <div class="row">
                 <div class="col-xs-6">
@@ -137,6 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
     $('#productTable').DataTable();

@@ -19,21 +19,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       border-color: #4cae4c;
       box-shadow: 0 0 0 0.25rem rgba(76, 174, 76, 0.25);
     }
+    
+    body {
+    background-color: #e8ffed;
+    }
   </style>
 </head>
 <body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar dengan Tulisan di Kanan dengan Bootstrap 5</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">KLINIK AAAA</a>
@@ -50,11 +42,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </nav>
 
-<div class="card">
-  <div class="card-body">
-  <div class="container mt-5">
-  <div class="row bg-gray">
-    <div class="col-md-6 offset-md-3">
+  <div class="row bg-gray p-5">
+
+  
+    <div class="col-md-6">
       <h2 class="text-center">Daftar Ticket Antre Klinik</h2>
       <form>
         <div class="mb-3">
@@ -76,12 +67,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <button type="submit" class="btn btn-success btn-block">Kirim</button>
       </form>
     </div>
+
+
+    <div class="col-md-6">
+      <img src="<?=base_url('img/health.jpg')?>" class="img-fluid" alt="...">
+    </div>
+
+
+
   </div>
+
+
+
 </div>
 
 
-  </div>
-</div>
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

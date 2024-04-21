@@ -6,10 +6,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Ticket Add</title>
+<title>Admin Ticket Edit</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<?=base_url()?>/css/style.css">
 <style>
@@ -29,15 +30,18 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Daftar Ticket Antre Baru</h2></td>
+      <td class="title"><h2>Edit Tiket Antre</h2></td>
     </tr>
   </table>
-      <form action="<?=site_url('/admin/ticket_add_go')?>" method="post">
+      <form action="<?=site_url('/admin/ticket_edit_go')?>" method="post">
+        <div class="form-group">
+          <input name="id_ticket" type="hidden" class="form-control" value="<?=$obj_ticket->id_ticket?>">
+        </div>
         <div class="form-group">
           <label for="nama">Nama Pelanggan:</label>
           <select name="id_pelanggan" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_pelanggan as $pelanggan): ?>
-            <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
+            <option <?=$pelanggan->id_pelanggan == $obj_ticket->id_pelanggan ? 'selected' : '';?> value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -45,7 +49,7 @@ table {
           <label for="nama">Poli Tujuan:</label>
           <select name="id_poli" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_poli as $poli): ?>
-            <option value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
+            <option <?=$poli->nama_poli == $obj_ticket->nama_poli ? 'selected' : '';?> value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -53,7 +57,7 @@ table {
           <label for="nama">Nama Dokter:</label>
           <select name="id_dokter" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_dokter as $dokter): ?>
-            <option value="<?=$dokter->id_dokter?>"><?=$dokter->nama_dokter?></option>
+            <option <?=$dokter->id_dokter == $obj_ticket->id_dokter ? 'selected' : '';?> value="<?=$dokter->id_dokter?>"><?=$dokter->nama_dokter?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -64,7 +68,6 @@ table {
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
     $('#productTable').DataTable();

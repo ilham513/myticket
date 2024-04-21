@@ -12,12 +12,7 @@ class Akun_model extends CI_Model{
 		if (count($result) > 0) {
 			//set session
 			$this->session->set_userdata('login', true);
-			
-			// //jika gudang maka kasih session role gudang
-			// if($id == 'gudang'){
-				// $this->session->set_userdata('role', 'gudang');
-			// }
-	
+				
 			echo 'Login berhasil';
 			
 			redirect('admin', 'refresh');

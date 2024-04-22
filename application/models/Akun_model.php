@@ -22,6 +22,15 @@ class Akun_model extends CI_Model{
 		}		
 	}
 
+	public function cek_entry($id, $password, $nama_tabel)
+	{
+		//query ambil data login
+		$query = $this->db->query("SELECT * FROM $nama_tabel WHERE nik='$id' AND no_telp='$password'");
+		$result = $query->result_array();
+
+		return $result;
+	}
+
 	public function mengecek_session()
 	{
 		if($this->session->userdata('login')){
@@ -38,14 +47,16 @@ class Akun_model extends CI_Model{
 	{
 		//hapus session
 		$this->session->unset_userdata('login');
+		$this->session->unset_userdata('user_nik');
+		$this->session->unset_userdata('id_pelanggan');
 		$this->session->unset_userdata('role');
 		
 		//hapus semua session
 		// sess_destroy();
 		
 		//redirect
-		echo '<script>alert("berhasil logout")</script>';
-		redirect('login', 'refresh');				
+		//echo '<script>alert("berhasil logout")</script>';
+		//redirect('login', 'refresh');				
 	}
 
 }

@@ -6,9 +6,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Input dengan Bootstrap 5</title>
+  <title>MyTicket</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Tema warna hijau -->
   <style>
     /* Mengubah warna tema menjadi hijau */
@@ -35,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="<?=site_url('login/login')?>">Login Admin</a>
+          <a class="nav-link" href="<?=site_url('login/login')?>">Login</a>
         </li>
       </ul>
     </div>
@@ -47,21 +49,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
     <div class="col-md-6">
       <h2 class="text-center">Daftar Ticket Antre Klinik</h2>
-      <form>
+      <form action="<?=site_url('login/tambah_ticket_go')?>" method="post">
         <div class="mb-3">
-          <label for="nama" class="form-label">Nama:</label>
-          <input type="text" class="form-control" id="nama" placeholder="Masukkan nama">
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">NIK:</label>
-          <input type="email" class="form-control" id="email" placeholder="Masukkan nik">
+        <label for="pesan" class="form-label">Nama Pelanggan:</label>
+          <select name="id_pelanggan" class="form-select" aria-label="Default select example">
+          <?php foreach($array_pelanggan as $pelanggan): ?>
+            <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
+          <?php endforeach; ?>
+          </select>
         </div>
         <div class="mb-3">
           <label for="pesan" class="form-label">Poli Tujuan:</label>
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">Umum</option>
-            <option value="2">Gigi</option>
-            <option value="3">Mata</option>
+          <select name="id_poli" class="form-select" aria-label="Default select example">
+          <?php foreach($array_poli as $poli): ?>
+            <option value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
+          <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label">Nama Dokter:</label>
+          <select name="id_dokter" class="form-select" aria-label="Default select example">
+          <?php foreach($array_dokter as $dokter): ?>
+            <option value="<?=$dokter->id_dokter?>"><?=$dokter->nama_dokter?></option>
+          <?php endforeach; ?>
           </select>
         </div>
         <button type="submit" class="btn btn-success btn-block">Kirim</button>
@@ -80,11 +90,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 </div>
-
-
-
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

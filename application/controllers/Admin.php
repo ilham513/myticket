@@ -66,6 +66,7 @@ class Admin extends CI_Controller {
 		$data = array(
 			'id_pelanggan' => $this->input->post('id_pelanggan'),
 			'id_poli' => $this->input->post('id_poli'),
+			'waktu_keluar' => $this->input->post('waktu_keluar'),
 			'id_dokter' => $this->input->post('id_dokter')
 		);
 
@@ -84,6 +85,12 @@ class Admin extends CI_Controller {
 		redirect('/admin/ticket', 'refresh');
 	}	
 
+	public function fifo()
+	{
+		$data['array_ticket'] = $this->crud_model->mengambil_data_join('ticket',['pelanggan']);
+
+		$this->load->view('admin_fifo',$data);
+	}
 	public function dokter()
 	{
 		$data['array_dokter'] = $this->crud_model->mengambil_data_join('dokter',['poli']);

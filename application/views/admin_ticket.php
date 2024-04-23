@@ -43,6 +43,7 @@ table {
 			<th>Name Pelanggan</th>
 			<th>Tanggal Mendaftar</th>
 			<th>Jam Masuk</th>
+			<th>Jam Keluar</th>
 			<th>Poli Tujuan</th>
 			<th>Nama Dokter</th>
 			<th>Action</th>
@@ -55,6 +56,7 @@ table {
 			<td><?=$ticket->nama_pelanggan?></td>
 			<td><?=date("d-m-Y", strtotime($ticket->stamp_waktu))?></td>
 			<td><?=date("H:i", strtotime($ticket->stamp_waktu))?></td>
+			<td><?=date("H:i", strtotime($ticket->waktu_keluar))?></td>
 			<td><?=$ticket->nama_poli?></td>
 			<td><?=$ticket->nama_dokter?></td>
 			<td>

@@ -54,6 +54,10 @@ table {
           </select>
         </div>
         <div class="form-group">
+          <label for="nama">Waktu Keluar:</label>
+          <input name="waktu_keluar" type="time" class="form-control" id="nama" value="<?=$obj_ticket->waktu_keluar?>">
+        </div>
+        <div class="form-group">
           <label for="nama">Nama Dokter:</label>
           <select name="id_dokter" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_dokter as $dokter): ?>

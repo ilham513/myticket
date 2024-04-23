@@ -59,6 +59,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </select>
         </div>
         <div class="mb-3">
+          <label for="pesan" class="form-label">Tanggal Masuk:</label>
+          <input class="form-select" type="date" name="tanggal_masuk"/>
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label">Waktu Masuk:</label>
+          <input class="form-select" type="time" name="waktu_masuk"/>
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label">Waktu Keluar:</label>
+          <input class="form-select" type="time" name="waktu_keluar"/>
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label">Poli Tujuan:</label>
+          <select name="id_poli" class="form-select" aria-label="Default select example">
+          <?php foreach($array_poli as $poli): ?>
+            <option value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
+          <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="mb-3">
           <label for="pesan" class="form-label">Poli Tujuan:</label>
           <select name="id_poli" class="form-select" aria-label="Default select example">
           <?php foreach($array_poli as $poli): ?>

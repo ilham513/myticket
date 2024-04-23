@@ -24,6 +24,9 @@ class Login extends CI_Controller {
 		//variabel data
 		$data = array(
 			'id_pelanggan' => $this->input->post('id_pelanggan'),
+			'tanggal_masuk' => $this->input->post('tanggal_masuk'),
+			'waktu_masuk' => $this->input->post('waktu_masuk'),
+			'waktu_keluar' => $this->input->post('waktu_keluar'),
 			'id_poli' => $this->input->post('id_poli'),		
 			'id_dokter' => $this->input->post('id_dokter')		
 		);

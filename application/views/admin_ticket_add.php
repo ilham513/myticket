@@ -47,11 +47,11 @@ table {
         </div>
         <div class="form-group">
           <label for="nama">Waktu Masuk:</label>
-          <input type="time" class="form-control" name="waktu_masuk">
+          <input type="time" class="form-control" required name="waktu_masuk">
         </div>
         <div class="form-group">
           <label for="nama">Waktu Keluar:</label>
-          <input type="time" class="form-control" name="waktu_keluar">
+          <input type="time" class="form-control" required name="waktu_keluar">
         </div>
         <div class="form-group">
           <label for="nama">Poli Tujuan:</label>

@@ -30,7 +30,7 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Data Ticket Antre</h2></td>
+      <td class="title"><h2>Data Antrian</h2></td>
       <td class="button-container" style="text-align: right;">
         <a href="<?=site_url('admin/ticket_add')?>"><button type="button" class="btn btn-primary">Tambah Antre Baru</button></a>
       </td>
@@ -54,8 +54,8 @@ table {
 		  <tr>
 			<td><?=$ticket->id_ticket?></td>
 			<td><?=$ticket->nama_pelanggan?></td>
-			<td><?=date("d-m-Y", strtotime($ticket->stamp_waktu))?></td>
-			<td><?=date("H:i", strtotime($ticket->stamp_waktu))?></td>
+			<td><?=date("d-m-Y", strtotime($ticket->tanggal_masuk))?></td>
+			<td><?=date("H:i", strtotime($ticket->waktu_masuk))?></td>
 			<td><?=date("H:i", strtotime($ticket->waktu_keluar))?></td>
 			<td><?=$ticket->nama_poli?></td>
 			<td><?=$ticket->nama_dokter?></td>

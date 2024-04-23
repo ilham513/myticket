@@ -29,7 +29,7 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Daftar Ticket Antre Baru</h2></td>
+      <td class="title"><h2>Daftar Antri Baru</h2></td>
     </tr>
   </table>
       <form action="<?=site_url('/admin/ticket_add_go')?>" method="post">
@@ -40,6 +40,18 @@ table {
             <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
             <?php endforeach; ?>
           </select>
+        </div>
+        <div class="form-group">
+          <label for="nama">Tanggal Masuk:</label>
+          <input type="date" class="form-control" name="tanggal_masuk" >
+        </div>
+        <div class="form-group">
+          <label for="nama">Waktu Masuk:</label>
+          <input type="time" class="form-control" name="waktu_masuk">
+        </div>
+        <div class="form-group">
+          <label for="nama">Waktu Keluar:</label>
+          <input type="time" class="form-control" name="waktu_keluar">
         </div>
         <div class="form-group">
           <label for="nama">Poli Tujuan:</label>

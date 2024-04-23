@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">KLINIK AAAA</a>
+    <a class="navbar-brand" href="#">Klinik Dr. Teguh B.S</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   
     <div class="col-md-6">
-      <h2 class="text-center">Daftar Ticket Antre Klinik</h2>
+      <h2 class="text-center">Daftar Antri Klinik</h2>
       <form action="<?=site_url('login/tambah_ticket_go')?>" method="post">
         <div class="mb-3">
         <label for="pesan" class="form-label">Nama Pelanggan:</label>

@@ -38,6 +38,9 @@ class Admin extends CI_Controller {
 		//variabel data
 		$data = array(
 			'id_pelanggan' => $this->input->post('id_pelanggan'),
+			'waktu_masuk' => $this->input->post('waktu_masuk'),
+			'waktu_keluar' => $this->input->post('waktu_keluar'),
+			'tanggal_masuk' => $this->input->post('tanggal_masuk'),
 			'id_dokter' => $this->input->post('id_dokter'),
 			'id_poli' => $this->input->post('id_poli')	
 		);
@@ -66,6 +69,8 @@ class Admin extends CI_Controller {
 		$data = array(
 			'id_pelanggan' => $this->input->post('id_pelanggan'),
 			'id_poli' => $this->input->post('id_poli'),
+			'tanggal_masuk' => $this->input->post('tanggal_masuk'),
+			'waktu_masuk' => $this->input->post('waktu_masuk'),
 			'waktu_keluar' => $this->input->post('waktu_keluar'),
 			'id_dokter' => $this->input->post('id_dokter')
 		);

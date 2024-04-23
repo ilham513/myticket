@@ -34,7 +34,7 @@ table {
 		<table>
 		<tr>
 			<td class="title">
-			<h2>Algoritma Fifo</h2>
+			<h2>Algoritma FCFS</h2>
 			</td>
 			<td class="button-container" style="text-align: right;"></td>
 		</tr>
@@ -53,7 +53,7 @@ table {
 			<?php
 			//selisih waktu arrival time
 			$waktu_daftar = strtotime("08:00:00");
-			$waktu_awal = strtotime($ticket->stamp_waktu);
+			$waktu_awal = strtotime($ticket->waktu_masuk);
 			$waktu_akhir = strtotime($ticket->waktu_keluar);
 			// Menghitung selisih waktu dalam detik
 			$waktu_kedatangan = abs($waktu_awal - $waktu_daftar)/60;
@@ -84,7 +84,7 @@ table {
 		<table>
 		<tr>
 			<td class="title">
-			<h2>Average Turnaround Time</h2>
+			<h2>Average Waiting Time</h2>
 			</td>
 			<td class="button-container" style="text-align: right;"></td>
 		</tr>

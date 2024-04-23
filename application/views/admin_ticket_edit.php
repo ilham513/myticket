@@ -30,7 +30,7 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Edit Tiket Antre</h2></td>
+      <td class="title"><h2>Edit Antri</h2></td>
     </tr>
   </table>
       <form action="<?=site_url('/admin/ticket_edit_go')?>" method="post">
@@ -52,6 +52,14 @@ table {
             <option <?=$poli->nama_poli == $obj_ticket->nama_poli ? 'selected' : '';?> value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
             <?php endforeach; ?>
           </select>
+        </div>
+        <div class="form-group">
+          <label for="nama">Tanggal Masuk:</label>
+          <input name="tanggal_masuk" type="date" class="form-control" id="nama" value="<?=$obj_ticket->tanggal_masuk?>">
+        </div>
+        <div class="form-group">
+          <label for="nama">Waktu Masuk:</label>
+          <input name="waktu_masuk" type="time" class="form-control" id="nama" value="<?=$obj_ticket->waktu_masuk?>">
         </div>
         <div class="form-group">
           <label for="nama">Waktu Keluar:</label>

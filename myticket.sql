@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2024 at 02:58 AM
+-- Generation Time: Apr 23, 2024 at 11:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -118,6 +118,8 @@ INSERT INTO `poli` (`id_poli`, `nama_poli`) VALUES
 CREATE TABLE `ticket` (
   `id_ticket` int(255) NOT NULL,
   `id_pelanggan` int(255) NOT NULL,
+  `tanggal_masuk` date DEFAULT NULL,
+  `waktu_masuk` time DEFAULT NULL,
   `stamp_waktu` timestamp NOT NULL DEFAULT current_timestamp(),
   `waktu_keluar` time DEFAULT NULL,
   `id_poli` int(255) NOT NULL,
@@ -128,12 +130,10 @@ CREATE TABLE `ticket` (
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`id_ticket`, `id_pelanggan`, `stamp_waktu`, `waktu_keluar`, `id_poli`, `id_dokter`) VALUES
-(1, 1, '2024-04-20 08:07:07', '16:00:00', 1, 1),
-(3, 2, '2024-04-20 08:49:08', '16:10:00', 2, 2),
-(5, 1, '2024-04-22 02:28:43', '16:30:00', 1, 1),
-(6, 1, '2024-04-22 02:31:50', '16:45:00', 1, 1),
-(8, 2, '2024-04-22 04:09:35', '12:00:00', 1, 1);
+INSERT INTO `ticket` (`id_ticket`, `id_pelanggan`, `tanggal_masuk`, `waktu_masuk`, `stamp_waktu`, `waktu_keluar`, `id_poli`, `id_dokter`) VALUES
+(12, 1, '2024-05-05', '10:00:00', '2024-04-23 09:34:13', '10:30:00', 1, 1),
+(13, 2, '2024-05-05', '10:40:00', '2024-04-23 09:34:48', '11:00:00', 2, 1),
+(14, 4, '2024-05-05', '11:10:00', '2024-04-23 09:35:31', '11:20:00', 3, 2);
 
 --
 -- Indexes for dumped tables
@@ -193,7 +193,7 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id_ticket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_ticket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

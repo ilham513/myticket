@@ -79,14 +79,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </select>
         </div>
         <div class="mb-3">
-          <label for="pesan" class="form-label">Poli Tujuan:</label>
-          <select name="id_poli" class="form-select" aria-label="Default select example">
-          <?php foreach($array_poli as $poli): ?>
-            <option value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
-          <?php endforeach; ?>
-          </select>
-        </div>
-        <div class="mb-3">
           <label for="pesan" class="form-label">Nama Dokter:</label>
           <select name="id_dokter" class="form-select" aria-label="Default select example">
           <?php foreach($array_dokter as $dokter): ?>

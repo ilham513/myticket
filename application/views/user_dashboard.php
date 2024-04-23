@@ -28,6 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<th>Name Pelanggan</th>
 			<th>Tanggal Mendaftar</th>
 			<th>Jam Masuk</th>
+			<th>Jam Keluar</th>
 			<th>Poli Tujuan</th>
 			<th>Nama Dokter</th>
 		  </tr>
@@ -37,8 +38,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  <tr>
 			<td><?=$ticket->id_ticket?></td>
 			<td><?=$ticket->nama_pelanggan?></td>
-			<td><?=date("d-m-Y", strtotime($ticket->stamp_waktu))?></td>
-			<td><?=date("H:i", strtotime($ticket->stamp_waktu))?></td>
+			<td><?=date("d-m-Y", strtotime($ticket->tanggal_masuk))?></td>
+			<td><?=date("H:i", strtotime($ticket->waktu_masuk))?></td>
+			<td><?=date("H:i", strtotime($ticket->waktu_keluar))?></td>
 			<td><?=$ticket->nama_poli?></td>
 			<td><?=$ticket->nama_dokter?></td>
 		  </tr>

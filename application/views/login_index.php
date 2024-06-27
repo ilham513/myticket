@@ -57,6 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
           <?php endforeach; ?>
           </select>
+          <!--div id="emailHelp" class="form-text">Untuk pelanggan yang belum terdaftar. Silahkan daftar <a href="/login/daftar_pelanggan">di sini</a>.</div-->
         </div>
         <div class="mb-3">
           <label for="pesan" class="form-label">Tanggal Masuk:</label>

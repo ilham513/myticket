@@ -17,6 +17,29 @@ class Login extends CI_Controller {
 
 		$this->load->view('login_index',$data);
 	}
+	public function daftar_pelanggan()
+	{
+		$this->load->view('daftar_pelanggan');
+	}
+	public function daftar_pelanggan_go()
+	{
+		//variabel data
+		$data = array(
+			'nama_pelanggan' => $this->input->post('nama_pelanggan'),
+			'nik' => $this->input->post('nik'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+			'alamat' => $this->input->post('alamat'),
+			'no_telp' => $this->input->post('no_telp')		
+		);
+		
+		//tampilkan view
+		$this->crud_model->masukan_data('pelanggan', $data);
+		
+		//redirect
+		redirect('/', 'refresh');
+
+	}
 	public function tambah_ticket_go()
 	{
 

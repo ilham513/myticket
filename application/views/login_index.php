@@ -49,46 +49,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   
     <div class="col-md-6">
       <h2 class="text-center">Daftar Antri Klinik</h2>
-      <form action="<?=site_url('login/tambah_ticket_go')?>" method="post">
-        <div class="mb-3">
-        <label for="pesan" class="form-label">Nama Pelanggan:</label>
-          <select name="id_pelanggan" class="form-select" aria-label="Default select example">
-          <?php foreach($array_pelanggan as $pelanggan): ?>
-            <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
-          <?php endforeach; ?>
-          </select>
-          <!--div id="emailHelp" class="form-text">Untuk pelanggan yang belum terdaftar. Silahkan daftar <a href="/login/daftar_pelanggan">di sini</a>.</div-->
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Tanggal Masuk:</label>
-          <input class="form-select" type="date" name="tanggal_masuk"/>
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Waktu Masuk:</label>
-          <input class="form-select" type="time" name="waktu_masuk"/>
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Waktu Keluar:</label>
-          <input class="form-select" type="time" name="waktu_keluar"/>
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Poli Tujuan:</label>
-          <select name="id_poli" class="form-select" aria-label="Default select example">
-          <?php foreach($array_poli as $poli): ?>
-            <option value="<?=$poli->id_poli?>"><?=$poli->nama_poli?></option>
-          <?php endforeach; ?>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Nama Dokter:</label>
-          <select name="id_dokter" class="form-select" aria-label="Default select example">
-          <?php foreach($array_dokter as $dokter): ?>
-            <option value="<?=$dokter->id_dokter?>"><?=$dokter->nama_dokter?></option>
-          <?php endforeach; ?>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-success btn-block">Kirim</button>
-      </form>
+      <div class="d-grid gap-2 mt-5">
+        <a class="btn btn-primary" href="<?=site_url()?>/login/daftar_pasien_lama">Pasien lama</a>
+        <a class="btn btn-primary" href="<?=site_url()?>/login/daftar_pasien_baru">Pasien baru</a>
+      </div>
     </div>
 
 

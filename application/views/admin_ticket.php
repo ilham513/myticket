@@ -53,7 +53,7 @@ table {
 		<?php foreach($array_ticket as $ticket): ?>
 		  <tr>
 			<td><?=$ticket->id_ticket?></td>
-			<td><?=$ticket->nama_pelanggan?></td>
+			<td><?= $ticket->nama_guest != null ? $ticket->nama_guest  : $ticket->nama_pelanggan ?></td>
 			<td><?=date("d-m-Y", strtotime($ticket->tanggal_masuk))?></td>
 			<td><?=date("H:i", strtotime($ticket->waktu_masuk))?></td>
 			<td><?=date("H:i", strtotime($ticket->waktu_keluar))?></td>

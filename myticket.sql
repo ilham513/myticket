@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2024 at 11:46 AM
+-- Generation Time: Jun 27, 2024 at 05:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -87,7 +87,10 @@ CREATE TABLE `pelanggan` (
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `nik`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `no_telp`) VALUES
 (1, 'Bapak A', '3216053829301', 'Jakarta', '1999-04-18', 'Perunas 3', '089989980000'),
 (2, 'Ibu B', '000', 'Bekasi', '2000-04-27', 'Karang Satria', '000'),
-(4, 'Bapak I', '2147483647', 'Bengkuli', '1967-04-25', 'Bogor', '089999877565');
+(4, 'Bapak I', '2147483647', 'Bengkuli', '1967-04-25', 'Bogor', '089999877565'),
+(5, 'Budi', '0001', 'Jakarta', '2024-06-28', 'Bojong Menteng', '000'),
+(6, 'Bapak Z', '0909', 'Bekasi', '2024-06-29', 'Jalan B', '0909'),
+(7, 'Bapak Y', '0808', 'Bekasi', '1999-11-22', '0808', '0808');
 
 -- --------------------------------------------------------
 
@@ -123,17 +126,25 @@ CREATE TABLE `ticket` (
   `stamp_waktu` timestamp NOT NULL DEFAULT current_timestamp(),
   `waktu_keluar` time DEFAULT NULL,
   `id_poli` int(255) NOT NULL,
-  `id_dokter` int(255) NOT NULL
+  `id_dokter` int(255) NOT NULL,
+  `nama_guest` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`id_ticket`, `id_pelanggan`, `tanggal_masuk`, `waktu_masuk`, `stamp_waktu`, `waktu_keluar`, `id_poli`, `id_dokter`) VALUES
-(12, 1, '2024-05-05', '10:00:00', '2024-04-23 09:34:13', '10:30:00', 1, 1),
-(13, 2, '2024-05-05', '10:40:00', '2024-04-23 09:34:48', '11:00:00', 2, 1),
-(14, 4, '2024-05-05', '11:10:00', '2024-04-23 09:35:31', '11:20:00', 3, 2);
+INSERT INTO `ticket` (`id_ticket`, `id_pelanggan`, `tanggal_masuk`, `waktu_masuk`, `stamp_waktu`, `waktu_keluar`, `id_poli`, `id_dokter`, `nama_guest`) VALUES
+(12, 1, '2024-06-05', '10:00:00', '2024-04-23 09:34:13', '10:30:00', 1, 1, ''),
+(13, 2, '2024-05-05', '10:40:00', '2024-04-23 09:34:48', '11:00:00', 2, 1, ''),
+(14, 4, '2024-05-05', '11:10:00', '2024-04-23 09:35:31', '11:20:00', 3, 2, ''),
+(15, 1, '2024-08-08', '11:00:00', '2024-04-23 10:09:40', '12:00:00', 1, 1, ''),
+(16, 1, '2024-05-05', '11:00:00', '2024-04-23 10:20:27', '11:30:00', 1, 1, ''),
+(17, 1, '2024-06-28', '09:09:00', '2024-06-27 13:51:50', '10:10:00', 1, 1, ''),
+(18, 1, '1999-08-08', '10:10:00', '2024-06-27 13:52:34', '20:10:00', 1, 1, ''),
+(19, 1, '2024-06-11', '10:10:00', '2024-06-27 13:55:29', '22:13:00', 1, 1, 'Judi'),
+(20, 1, '2024-06-12', '12:12:00', '2024-06-27 14:02:20', '13:13:00', 1, 1, 'Nama Pelanggan Baru'),
+(21, 5, '2024-06-13', '11:11:00', '2024-06-27 15:06:35', '11:11:00', 1, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -181,7 +192,7 @@ ALTER TABLE `dokter`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pelanggan` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `poli`
@@ -193,7 +204,7 @@ ALTER TABLE `poli`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id_ticket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_ticket` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables

@@ -17,9 +17,18 @@ class Login extends CI_Controller {
 
 		$this->load->view('login_index',$data);
 	}
-	public function daftar_pelanggan()
+	public function daftar_pasien_lama()
 	{
-		$this->load->view('daftar_pelanggan');
+		$data['array_pelanggan'] = $this->crud_model->mengambil_data('pelanggan');
+		$data['array_dokter'] = $this->crud_model->mengambil_data('dokter');
+		$data['array_poli'] = $this->crud_model->mengambil_data('poli');
+
+		$this->load->view('daftar_pasien_lama',$data);
+	}
+
+	public function daftar_pasien_baru()
+	{
+		$this->load->view('daftar_pasien_baru');
 	}
 	public function daftar_pelanggan_go()
 	{
@@ -37,7 +46,7 @@ class Login extends CI_Controller {
 		$this->crud_model->masukan_data('pelanggan', $data);
 		
 		//redirect
-		redirect('/', 'refresh');
+		redirect('/login/daftar_pasien_lama', 'refresh');
 
 	}
 	public function tambah_ticket_go()

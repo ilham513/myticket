@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container mt-5 mb-5">
         <form action="<?=site_url()?>/login/daftar_pelanggan_go" method="POST">
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama Pelanggan</label>
+                <label for="nama" class="form-label">Nama Pasien</label>
                 <input type="text" class="form-control" id="nama" name="nama_pelanggan" required>
             </div>
             <div class="mb-3">

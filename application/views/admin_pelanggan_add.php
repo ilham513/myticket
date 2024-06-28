@@ -30,12 +30,12 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Tambah Pelanggan Baru</h2></td>
+      <td class="title"><h2>Tambah Pasien Baru</h2></td>
     </tr>
   </table>
       <form action="<?=site_url('/admin/pelanggan_add_go')?>" method="post">
         <div class="form-group">
-          <label for="nama">Nama Pelanggan:</label>
+          <label for="nama">Nama Pasien:</label>
           <input name="nama_pelanggan" type="text" class="form-control" id="nama" placeholder="Masukkan nama....">
         </div>
         <div class="form-group">

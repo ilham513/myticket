@@ -40,7 +40,7 @@ table {
 		<thead>
 		  <tr>
 			<th>ID Antre</th>
-			<th>Name Pelanggan</th>
+			<th>Name Pasien</th>
 			<th>Tanggal Mendaftar</th>
 			<th>Jam Masuk</th>
 			<th>Jam Keluar</th>

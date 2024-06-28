@@ -38,7 +38,7 @@ table {
           <input name="id_ticket" type="hidden" class="form-control" value="<?=$obj_ticket->id_ticket?>">
         </div>
         <div class="form-group">
-          <label for="nama">Nama Pelanggan:</label>
+          <label for="nama">Nama Pasien:</label>
           <select name="id_pelanggan" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_pelanggan as $pelanggan): ?>
             <option <?=$pelanggan->id_pelanggan == $obj_ticket->id_pelanggan ? 'selected' : '';?> value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>

@@ -14,7 +14,7 @@
     <div class="col-md-6 text-center">
       <h2>Pilih Login</h2>
       <a href="<?=site_url('login/login_admin')?>"><button type="button" class="btn btn-primary me-2">Login Admin</button></a>
-      <a href="<?=site_url('login/login_user')?>"><button type="button" class="btn btn-secondary">Login Pelanggan</button></a>
+      <a href="<?=site_url('login/login_user')?>"><button type="button" class="btn btn-secondary">Login Pasien</button></a>
     </div>
   </div>
 </div>

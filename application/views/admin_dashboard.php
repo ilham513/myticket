@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
               <div class="col-xs-6 text-right">
                 <p class="announcement-heading"><?=$jumlah_pelanggan?></p>
-                <p class="announcement-text">Pelanggan</p>
+                <p class="announcement-text">Pasien</p>
               </div>
             </div>
           </div>

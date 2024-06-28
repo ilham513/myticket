@@ -30,16 +30,16 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Data Pelanggan</h2></td>
+      <td class="title"><h2>Data Pasien</h2></td>
       <td class="button-container" style="text-align: right;">
-        <a href="<?=site_url('admin/pelanggan_add')?>"><button type="button" class="btn btn-primary">Tambah Pelanggan Baru</button></a>
+        <a href="<?=site_url('admin/pelanggan_add')?>"><button type="button" class="btn btn-primary">Tambah Pasien Baru</button></a>
       </td>
     </tr>
   </table>
 	  <table id="productTable">
 		<thead>
 		  <tr>
-			<th>ID Pelanggan</th>
+			<th>ID Pasien</th>
 			<th>Nama Lengkap</th>
 			<th>NIK</th>
 			<th>Tempat Lahir</th>

@@ -51,9 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <h2 class="text-center">Daftar Antri Klinik</h2>
       <form action="<?=site_url('login/tambah_ticket_go')?>" method="post">
         <div class="mb-3">
-        <label for="pesan" class="form-label">Nama Pelanggan:</label>
+        <label for="pesan" class="form-label">Nama Pasien:</label>
         <select class="form-select" name="id_pelanggan">
-          <option selected disabled>Pilih nama pelanggan</option>
+          <option selected disabled>Pilih nama pasien</option>
           <?php foreach($array_pelanggan as $pelanggan): ?>
           <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>
           <?php endforeach; ?>

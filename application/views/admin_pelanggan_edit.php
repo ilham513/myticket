@@ -30,7 +30,7 @@ table {
 	<div class="status-info">	
 <table>
     <tr>
-      <td class="title"><h2>Edit Data Pelanggan</h2></td>
+      <td class="title"><h2>Edit Data Pasien</h2></td>
     </tr>
   </table>
       <form action="<?=site_url('/admin/pelanggan_edit_go')?>" method="post">
@@ -38,7 +38,7 @@ table {
           <input name="id_pelanggan" type="hidden" class="form-control" value="<?=$obj_pelanggan->id_pelanggan?>">
         </div>
         <div class="form-group">
-          <label for="nama">Nama Pelanggan:</label>
+          <label for="nama">Nama Pasien:</label>
           <input name="nama_pelanggan" type="text" class="form-control" id="nama" value="<?=$obj_pelanggan->nama_pelanggan?>">
         </div>
         <div class="form-group">

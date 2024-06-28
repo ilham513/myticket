@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<thead>
 		  <tr>
 			<th>ID Antre</th>
-			<th>Name Pelanggan</th>
+			<th>Nama Pasien</th>
 			<th>Tanggal Mendaftar</th>
 			<th>Jam Masuk</th>
 			<th>Jam Keluar</th>

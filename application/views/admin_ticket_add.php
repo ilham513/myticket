@@ -34,7 +34,7 @@ table {
   </table>
       <form action="<?=site_url('/admin/ticket_add_go')?>" method="post">
         <div class="form-group">
-          <label for="nama">Nama Pelanggan:</label>
+          <label for="nama">Nama Pasien:</label>
           <select name="id_pelanggan" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
             <?php foreach($array_pelanggan as $pelanggan): ?>
             <option value="<?=$pelanggan->id_pelanggan?>"><?=$pelanggan->nama_pelanggan?></option>

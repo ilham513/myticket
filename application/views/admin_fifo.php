@@ -42,8 +42,8 @@ table {
 		<table id="productTable">
 		<thead>
 			<tr>
-			<th>ID Ticket</th>
-			<th>Pesanan</th>
+			<th>ID antri</th>
+			<th>Antrian</th>
 			<th>Waktu Kedatangan</th>
 			<th>Burst Time</th>
 			</tr>
@@ -75,7 +75,7 @@ table {
 		<div class="alert alert-info" role="alert">
 			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 			<span class="sr-only">Notice:</span>
-			Jadi urutan pesanan adalah : <?php foreach($array_ticket as $ticket): echo $ticket->nama_pelanggan.', '; endforeach;?> 
+			Jadi urutan antrian adalah : <?php foreach($array_ticket as $ticket): echo $ticket->nama_pelanggan.', '; endforeach;?> 
 		</div>		
 	</div>
 
